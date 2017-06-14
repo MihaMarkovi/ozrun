@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prijava | Register</title>
+    <script src="vendor/js/jquery-1.10.2.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/cats/runner.gif">
+    <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/bootstrap/winmark/dist/css/bootstrap-formhelpers.css" rel="stylesheet">
+
+    <script src="/assets/bootstrap/winmark/js/lang/en_US/bootstrap-formhelpers-countries.en_US.js"></script>
+    <script src="/assets/bootstrap/winmark/js/bootstrap-formhelpers-countries.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>PRIJAVA | REGISTER</h1>
+    <form method="post">
+
+        <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+
+        <div class="form-group">
+            <label>Ime / Name</label>
+            <input style="width:50%;" class="form-control" id="addName" name="ime" required>
+        </div>
+
+
+        <div class="form-group">
+            <label>Prezime / Surname</label>
+            <input style="width:50%;" class="form-control" id="addSurname" name="prezime" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sel1">Spol / Sex</label>
+            <select style="width:50%;" class="form-control" id="sel1" name="spol" required>
+                <option></option>
+                <option>M</option>
+                <option>Ž</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Država / Country</label>
+            <input style="width:50%;" class="form-control" id="addCountry" name="drzava" required>
+        </div>
+
+        <div class="form-group">
+            <label>Klub / Club</label>
+            <input style="width:50%;" class="form-control" id="addClub" name="klub">
+        </div>
+
+        <a class="btn btn-success" type="submit">Prihvati / Submit</a>
+    </form>
+</div>
+<script src="/assets/bootstrap/js/bootstrap.js"></script>
+
+</body>
+</html>
