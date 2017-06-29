@@ -4,17 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/handlers/register.py" line="14" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b144a3c-3185-4c01-ac79-e36662317b19" name="Default" comment="some errors fixed">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/finally_delete_user.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/povrni.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/register.py" afterPath="$PROJECT_DIR$/handlers/register.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin.html" afterPath="$PROJECT_DIR$/templates/admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/delete_user.html" afterPath="$PROJECT_DIR$/templates/delete_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/prijava.html" afterPath="$PROJECT_DIR$/templates/prijava.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/smeti.html" afterPath="$PROJECT_DIR$/templates/smeti.html" />
-    </list>
+    <list default="true" id="0b144a3c-3185-4c01-ac79-e36662317b19" name="Default" comment="some errors fixed" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
