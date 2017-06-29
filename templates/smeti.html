@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>WD2 SmartNinja boilerplate</title>
+    <title>Smeče</title>
 
     <!-- Bootstrap -->
     <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -16,33 +16,43 @@
 
 <div class="container">
     <div class="jumbotron">
-        <h1>Smeče</h1>
-
+        <div class="row">
+            <div class="col-sm-1">
+                <a class="btn btn-danger" href="/admin">
+                    <strong>Back</strong>
+                </a>
+            </div>
+            <div class="col-sm-1">
+                <h1>Smeče</h1>
+            </div>
+        </div>
         <table class="table table-sm">
-    <thead>
-    <tr>
-        <th>IME</th>
-        <th>PREZIME</th>
-        <th>SPOL</th>
-        <th>KATEGORIJA</th>
-        <th>DRŽAVA</th>
-        <th>KLUB</th>
-    </tr>
-    </thead>
-    <tbody>
+            <thead>
+            <tr>
+                <th>IME</th>
+                <th>PREZIME</th>
+                <th>SPOL</th>
+                <th>KATEGORIJA</th>
+                <th>DRŽAVA</th>
+                <th>KLUB</th>
+            </tr>
+            </thead>
+            <tbody>
 
-    {% for user in seznam %}
-    <tr>
-        <td> {{ user.name }}</td>
-        <td> {{ user.surname }}</td>
-        <td> {{ user.sex }} </td>
-        <td> {{ user.category }} </td>
-        <td> {{ user.country }}</td>
-        <td> {{ user.club }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+            {% for user in seznam %}
+            <tr>
+                <td> {{ user.name }}</td>
+                <td> {{ user.surname }}</td>
+                <td> {{ user.sex }}</td>
+                <td> {{ user.category }}</td>
+                <td> {{ user.country }}</td>
+                <td> {{ user.club }}</td>
+                <td><a href="/admin/user/{{ user.key.id() }}/revive"> vrati </a></td>
+                <td><a href="/admin/user/{{ user.key.id() }}/finally_delete"> dokončno odstrani </a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
     </div>
 </div>

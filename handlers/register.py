@@ -54,3 +54,29 @@ class UserEditHandler(BaseHandler):
         user.put()
 
         return self.redirect_to("admin-page")
+
+class UserReviveHandler(BaseHandler):
+    def get(self, user_id):
+        user = User.get_by_id(int(user_id))
+        params={"user": user}
+
+        return self.render_template("povrni.html", params=params)
+
+    def post(self, user_id):
+        user = User.get_by_id(int(user_id))
+        user.deleted = False
+        user.put()
+
+        return self.redirect_to("admin-page")
+
+class UserFinallyDelete(BaseHandler):
+    def get(self, user_id):
+        user = User.get_by_id(int(user_id))
+        params = {"user": user}
+
+        return self.render_template("finally_delete_user.html", params=params)
+
+    def post(self, user_id):
+        user = User.get_by_id(int(user_id))
+        user.key.delete()
+        return self.redirect_to("trash-page")

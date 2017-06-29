@@ -14,15 +14,13 @@
 
 <body>
 
-<div class="jumbotron">
-    <div class="container">
-        <h1>Stvarno želite odstraniti trkača?</h1>
+    <div class="jumbotron">
+        <h1>Stvarno želite vratit trkača?</h1>
 
-        <form action="/admin/user/{{ user.key.id() }}/delete" method="post">
-            <button type="submit">YES, delete</button>
+        <form action="/admin/user/{{ user.key.id() }}/revive" method="post">
+                <button type="submit">DA, vrati</button>
         </form>
     </div>
-</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
