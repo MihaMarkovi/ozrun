@@ -62,14 +62,17 @@ class AdminHandler(BaseHandler):
         admin = users.is_current_user_admin()
 
         seznam_3_km = User.query(User.category == "3 km", User.deleted == False).order().fetch()
+        seznam_3_len = len(seznam_3_km)
         seznam_6_km = User.query(User.category == "6 km", User.deleted == False).order().fetch()
+        seznam_6_len = len(seznam_6_km)
         seznam_9_km = User.query(User.category == "9 km", User.deleted == False).order().fetch()
+        seznam_9_len = len(seznam_9_km)
 
         if admin:
             logiran = True
             logout_url = users.create_logout_url(self.request.uri)
 
-            params = {"seznam_3_km": seznam_3_km, "seznam_6_km": seznam_6_km, "seznam_9_km": seznam_9_km, "logiran": logiran, "logout_url": logout_url, "user": user}
+            params = {"seznam_3_km": seznam_3_km, "seznam_3_len": seznam_3_len, "seznam_6_km": seznam_6_km, "seznam_6_len": seznam_6_len, "seznam_9_km": seznam_9_km, "seznam_9_len": seznam_9_len, "logiran": logiran, "logout_url": logout_url, "user": user}
         else:
             logiran = False
             login_url = users.create_login_url(self.request.uri)
