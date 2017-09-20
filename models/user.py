@@ -7,8 +7,11 @@ class User(ndb.Model):
     category = ndb.StringProperty()
     country = ndb.StringProperty()
     club = ndb.StringProperty()
+    created = ndb.DateProperty(auto_now_add=True)
+    updated = ndb.DateTimeProperty(auto_now=True)
     deleted = ndb.BooleanProperty(default=False)
     broj = ndb.StringProperty()
+    vrjeme = ndb.StringProperty()
 
     @classmethod
     def create(cls, ime, prezime, spol, kategorija, drzava, klub):

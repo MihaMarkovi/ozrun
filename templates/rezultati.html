@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Uredi trkača</title>
+    <title>Rezultati</title>
 
     <!-- Bootstrap -->
     <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -14,16 +14,31 @@
 
 <body>
 
+{%if admin%}
 <div class="container">
     <div class="jumbotron">
-        <div class="form-group">
-            <form action="/admin/user/{{ user.key.id() }}/edit" method="post">
-                <label for="addNumber">Unesite broj trkača</label>
-                <input style="width:50%;" class="form-control" id="addNumber" name="broj">
-            </form>
-        </div>
+        <h1>Unesite rezultat trkača</h1>
+        <form method="post">
+            <div class="form-group">
+                <label>Broj trkača</label>
+                <input style="width:50%;" class="form-control" id="addNumber" name="broj_rezultat" required>
+            </div>
+
+            <div class="form-group">
+                <label>Vrjeme</label>
+                <input style="width:50%" class="form-control" id="addTime" name="vrjeme_rezultat" required>
+            </div>
+            <button class="btn btn-success" type="submit">Prihvati</button>
+        </form>
     </div>
 </div>
+{% else %}
+<div style="text-align: center;">
+    <h1>Error 404</h1>
+    <img src="/assets/cats/notpass.jpg">
+    <h2>Page not found</h2>
+</div>
+{% endif %}
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

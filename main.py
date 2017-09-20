@@ -3,7 +3,7 @@ import webapp2
 
 from handlers.base import MainHandler, EnMainHandler, ThanksHandler, AdminHandler, TrashHandler
 from handlers.register import PrijavaCreateHandler, UsersAllHandler, UserDeleteHandler, UserEditHandler, \
-    UserReviveHandler, UserFinallyDelete
+    UserReviveHandler, UserFinallyDelete, ResultHandler, ResultUserHandler
 
 app = webapp2.WSGIApplication([
     # main pages
@@ -21,5 +21,7 @@ app = webapp2.WSGIApplication([
     webapp2.Route('/admin/user/<user_id:(\d+)>/edit', UserEditHandler, name="user-edit"),
     webapp2.Route('/admin/user/<user_id:(\d+)>/revive', UserReviveHandler, name="user-revive"),
     webapp2.Route('/admin/user/<user_id:(\d+)>/finally_delete', UserFinallyDelete, name="user-finally-delete"),
+    webapp2.Route('/rezultati', ResultHandler, name="result-page"),
+    webapp2.Route('/rezultati_utrke', ResultUserHandler, name="result-page"),
     webapp2.Route('/admin/091256387/smece', TrashHandler, name="trash-page"),
 ], debug=True)

@@ -61,11 +61,11 @@ class AdminHandler(BaseHandler):
 
         admin = users.is_current_user_admin()
 
-        seznam_3_km = User.query(User.category == "3 km", User.deleted == False).order().fetch()
+        seznam_3_km = User.query(User.category == "3 km", User.deleted == False).order(User.updated).fetch()
         seznam_3_len = len(seznam_3_km)
-        seznam_6_km = User.query(User.category == "6 km", User.deleted == False).order().fetch()
+        seznam_6_km = User.query(User.category == "6 km", User.deleted == False).order(User.updated).fetch()
         seznam_6_len = len(seznam_6_km)
-        seznam_9_km = User.query(User.category == "9 km", User.deleted == False).order().fetch()
+        seznam_9_km = User.query(User.category == "9 km", User.deleted == False).order(User.updated).fetch()
         seznam_9_len = len(seznam_9_km)
 
         if admin:
@@ -86,3 +86,4 @@ class TrashHandler(BaseHandler):
         seznam = User.query(User.deleted == True).order().fetch()
         params = {"seznam": seznam}
         return self.render_template("smeti.html", params=params)
+
